@@ -1,5 +1,5 @@
 const _apiKey = '86093b2ae8ab4a84b5957f0c566ab1f3';
-const proxyUrl = "https://cors-anywhere.herokuapp.com/"
+const proxyUrl = "http://crossorigin.me/"
 
 export const getHotTopic = async () => {
     const res = await fetch(`${proxyUrl}https://newsapi.org/v2/top-headlines?language=en&apiKey=${_apiKey}`);
