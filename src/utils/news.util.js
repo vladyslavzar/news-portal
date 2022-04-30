@@ -1,5 +1,5 @@
 const _apiKey = '86093b2ae8ab4a84b5957f0c566ab1f3';
-const proxyUrl = "http://crossorigin.me/"
+const proxyUrl = "https://thingproxy.freeboard.io/fetch/"
 
 export const getHotTopic = async () => {
     const res = await fetch(`${proxyUrl}https://newsapi.org/v2/top-headlines?language=en&apiKey=${_apiKey}`);
