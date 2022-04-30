@@ -3,6 +3,7 @@
   "name": "news_portal",
   "version": "0.1.0",
   "private": true,
+  "proxy": "https://newsapi.org/",
   "dependencies": {
     "@auth0/auth0-react": "^1.10.0",
     "@testing-library/jest-dom": "^5.16.4",
