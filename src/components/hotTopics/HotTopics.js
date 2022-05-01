@@ -17,6 +17,8 @@ const HotTopics = ({setIsLoading, isLoading}) => {
         getHotTopic()
                 .then(res => {
                     
+                    console.log(res, 'vercel err');
+                    
                     setView(res.articles[0]);
 
                     const formattedTime = getDifferenceBetweenTime(res.articles[0].publishedAt);
