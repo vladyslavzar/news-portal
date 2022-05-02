@@ -1,5 +1,5 @@
 
-const proxyUrl = "http://localhost:8080"
+const proxyUrl = "https://wonderful-blancmange-79f0ea.netlify.app/.netlify/functions/api/"
 
 export const getHotTopic = async () => {
     const res = await fetch(`${proxyUrl}/cors/getHotTopic`,{
