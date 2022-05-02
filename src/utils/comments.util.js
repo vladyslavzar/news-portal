@@ -1,8 +1,9 @@
 export const getComentsOnArticle = async () => {
-    const res = await fetch(`http://localhost:3000/comments`,{
+    const res = await fetch(`https://api.jsonbin.io/b/62701cc8019db4679694c179/comments`,{
         headers : { 
             'Content-Type': 'application/json',
-            'Accept': 'application/json'
+            'Accept': 'application/json',
+            'X-Master-Key': '$2b$10$jhCEiJaOKoNHBj.BSHa74.IVpSWsxMAViFPkC34wrBZy2UpRqWVxu'
         }
     });
 
@@ -59,7 +60,7 @@ export const postComment = async (title, nickname, pfp, content, email) => {
                                 console.log(item.postComments.concat(newComment), 'concat');
                                 
                         
-                                fetch(`http://localhost:3000/comments/${item.id}`,{
+                                fetch(`https://api.jsonbin.io/b/62701cc8019db4679694c179/comments/${item.id}`,{
                                     method: 'PUT',
                                     headers : {
                                         'Content-Type': 'application/json'
@@ -94,7 +95,7 @@ export const postComment = async (title, nickname, pfp, content, email) => {
         ]
     }
 
-    await fetch(`http://localhost:3000/comments/`,{
+    await fetch(`https://api.jsonbin.io/b/62701cc8019db4679694c179/comments/`,{
             method: 'POST',
             mode: 'cors', // no-cors, *cors, same-origin
             cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
@@ -114,7 +115,7 @@ export const reactToComment = async (isLike, articleId, commentId, email) => {
 
     // inc comm like/dislike
 
-    fetch(`http://localhost:3000/comments/${articleId}`,{
+    fetch(`https://api.jsonbin.io/b/62701cc8019db4679694c179/comments/${articleId}`,{
         headers : { 
             'Content-Type': 'application/json',
             'Accept': 'application/json'
@@ -124,7 +125,7 @@ export const reactToComment = async (isLike, articleId, commentId, email) => {
     .then(res => {
         let ifReturn = false
 
-        fetch(`http://localhost:3000/userActions`,{
+        fetch(`https://api.jsonbin.io/b/62701cc8019db4679694c179/userActions`,{
             headers : { 
                 'Content-Type': 'application/json',
                 'Accept': 'application/json'
@@ -164,7 +165,7 @@ export const reactToComment = async (isLike, articleId, commentId, email) => {
                 
             }
         })
-        fetch(`http://localhost:3000/comments/${commentId}`,{
+        fetch(`https://api.jsonbin.io/b/62701cc8019db4679694c179/comments/${commentId}`,{
             method: 'PUT',
             headers : {
                 'Content-Type': 'application/json'
@@ -177,7 +178,7 @@ export const reactToComment = async (isLike, articleId, commentId, email) => {
 
     let userId = 1;
 
-    fetch(`http://localhost:3000/userActions`,{
+    fetch(`https://api.jsonbin.io/b/62701cc8019db4679694c179/userActions`,{
         headers : { 
             'Content-Type': 'application/json',
             'Accept': 'application/json'
@@ -206,7 +207,7 @@ export const reactToComment = async (isLike, articleId, commentId, email) => {
                     
                     
             
-                    fetch(`http://localhost:3000/userActions/${item.id}`,{
+                    fetch(`https://api.jsonbin.io/b/62701cc8019db4679694c179/userActions/${item.id}`,{
                         method: 'PUT',
                         headers : {
                             'Content-Type': 'application/json'
@@ -235,7 +236,7 @@ export const reactToComment = async (isLike, articleId, commentId, email) => {
         ]
     }
 
-    await fetch(`http://localhost:3000/userActions/`,{
+    await fetch(`https://api.jsonbin.io/b/62701cc8019db4679694c179/userActions/`,{
             method: 'POST',
             mode: 'cors', // no-cors, *cors, same-origin
             cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
@@ -250,7 +251,7 @@ export const reactToComment = async (isLike, articleId, commentId, email) => {
 }
 
 export const deleteComment = (articleId, commentId) => {
-    fetch(`http://localhost:3000/comments/${articleId}`,{
+    fetch(`https://api.jsonbin.io/b/62701cc8019db4679694c179/comments/${articleId}`,{
         headers : { 
             'Content-Type': 'application/json',
             'Accept': 'application/json'
@@ -263,7 +264,7 @@ export const deleteComment = (articleId, commentId) => {
                 res.postComments.splice(i, 1);             
             }
         })
-        fetch(`http://localhost:3000/comments/${articleId}`,{
+        fetch(`https://api.jsonbin.io/b/62701cc8019db4679694c179/comments/${articleId}`,{
             method: 'PUT',
             headers : {
                 'Content-Type': 'application/json'

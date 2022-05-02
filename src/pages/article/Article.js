@@ -90,7 +90,7 @@ const Article = ({setIsLoading, isLoading}) => {
                         <input type="text" placeholder="Write a comment" value={commInpt} onChange={(e) => {setCommInpt(e.target.value)}}/>
                         <button onClick={btnHandler}>Post</button>
                     </div>
-                    {view}
+                    {/* {view} */}
                 </div>
             </div>
         </section>
