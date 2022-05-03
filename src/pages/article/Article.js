@@ -85,13 +85,13 @@ const Article = ({setIsLoading, isLoading}) => {
                 <div className="articlePage__container__xtraInfo"><span>{time}</span><span>{author}</span></div>
                 <h3>{title}</h3>
                 <p>{description}</p>
-                {/* <div className="articlePage__container__commentSection">
+                <div className="articlePage__container__commentSection">
                     <div className="articlePage__container__commentSection__top">
                         <input type="text" placeholder="Write a comment" value={commInpt} onChange={(e) => {setCommInpt(e.target.value)}}/>
                         <button onClick={btnHandler}>Post</button>
                     </div>
                     view
-                </div> */}
+                </div>
             </div>
         </section>
     )

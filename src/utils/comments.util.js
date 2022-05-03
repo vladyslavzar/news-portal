@@ -1,5 +1,5 @@
 export const getComentsOnArticle = async () => {
-    const res = await fetch(`https://api.jsonbin.io/b/62701cc8019db4679694c179/comments`,{
+    const res = await fetch(`https://quickest-peach-speedwell.glitch.me/comments`,{
         headers : { 
             'Content-Type': 'application/json',
             'Accept': 'application/json',
@@ -60,7 +60,7 @@ export const postComment = async (title, nickname, pfp, content, email) => {
                                 console.log(item.postComments.concat(newComment), 'concat');
                                 
                         
-                                fetch(`https://api.jsonbin.io/b/62701cc8019db4679694c179/comments/${item.id}`,{
+                                fetch(`https://quickest-peach-speedwell.glitch.me/comments/${item.id}`,{
                                     method: 'PUT',
                                     headers : {
                                         'Content-Type': 'application/json'
@@ -95,7 +95,7 @@ export const postComment = async (title, nickname, pfp, content, email) => {
         ]
     }
 
-    await fetch(`https://api.jsonbin.io/b/62701cc8019db4679694c179/comments/`,{
+    await fetch(`https://quickest-peach-speedwell.glitch.me/comments/`,{
             method: 'POST',
             mode: 'cors', // no-cors, *cors, same-origin
             cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
@@ -115,7 +115,7 @@ export const reactToComment = async (isLike, articleId, commentId, email) => {
 
     // inc comm like/dislike
 
-    fetch(`https://api.jsonbin.io/b/62701cc8019db4679694c179/comments/${articleId}`,{
+    fetch(`https://quickest-peach-speedwell.glitch.me/comments/${articleId}`,{
         headers : { 
             'Content-Type': 'application/json',
             'Accept': 'application/json'
@@ -125,7 +125,7 @@ export const reactToComment = async (isLike, articleId, commentId, email) => {
     .then(res => {
         let ifReturn = false
 
-        fetch(`https://api.jsonbin.io/b/62701cc8019db4679694c179/userActions`,{
+        fetch(`https://quickest-peach-speedwell.glitch.me/userActions`,{
             headers : { 
                 'Content-Type': 'application/json',
                 'Accept': 'application/json'
@@ -165,7 +165,7 @@ export const reactToComment = async (isLike, articleId, commentId, email) => {
                 
             }
         })
-        fetch(`https://api.jsonbin.io/b/62701cc8019db4679694c179/comments/${commentId}`,{
+        fetch(`https://quickest-peach-speedwell.glitch.me/comments/${commentId}`,{
             method: 'PUT',
             headers : {
                 'Content-Type': 'application/json'
@@ -178,7 +178,7 @@ export const reactToComment = async (isLike, articleId, commentId, email) => {
 
     let userId = 1;
 
-    fetch(`https://api.jsonbin.io/b/62701cc8019db4679694c179/userActions`,{
+    fetch(`https://quickest-peach-speedwell.glitch.me/userActions`,{
         headers : { 
             'Content-Type': 'application/json',
             'Accept': 'application/json'
@@ -207,7 +207,7 @@ export const reactToComment = async (isLike, articleId, commentId, email) => {
                     
                     
             
-                    fetch(`https://api.jsonbin.io/b/62701cc8019db4679694c179/userActions/${item.id}`,{
+                    fetch(`https://quickest-peach-speedwell.glitch.me/userActions/${item.id}`,{
                         method: 'PUT',
                         headers : {
                             'Content-Type': 'application/json'
@@ -236,7 +236,7 @@ export const reactToComment = async (isLike, articleId, commentId, email) => {
         ]
     }
 
-    await fetch(`https://api.jsonbin.io/b/62701cc8019db4679694c179/userActions/`,{
+    await fetch(`https://quickest-peach-speedwell.glitch.me/userActions/`,{
             method: 'POST',
             mode: 'cors', // no-cors, *cors, same-origin
             cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
@@ -251,7 +251,7 @@ export const reactToComment = async (isLike, articleId, commentId, email) => {
 }
 
 export const deleteComment = (articleId, commentId) => {
-    fetch(`https://api.jsonbin.io/b/62701cc8019db4679694c179/comments/${articleId}`,{
+    fetch(`https://quickest-peach-speedwell.glitch.me/comments/${articleId}`,{
         headers : { 
             'Content-Type': 'application/json',
             'Accept': 'application/json'
@@ -264,7 +264,7 @@ export const deleteComment = (articleId, commentId) => {
                 res.postComments.splice(i, 1);             
             }
         })
-        fetch(`https://api.jsonbin.io/b/62701cc8019db4679694c179/comments/${articleId}`,{
+        fetch(`https://quickest-peach-speedwell.glitch.me/comments/${articleId}`,{
             method: 'PUT',
             headers : {
                 'Content-Type': 'application/json'
